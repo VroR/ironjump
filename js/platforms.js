@@ -34,7 +34,7 @@ var platforms = [
     x: 150,
     y: -750,
     width: 200,
-    color: "rgb(100, 110, 255)"
+    color: "rgb(255, 110, 255)"
   },
   {
     x: 0,
