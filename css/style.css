@@ -42,6 +42,14 @@ canvas {
   margin-bottom: 100px;
 }
 
+button {
+  background-color: #d10d69;
+  border : none;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 
 
 /* Media Queries are rules that are applied in specific conditions */
