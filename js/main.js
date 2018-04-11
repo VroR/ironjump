@@ -6,8 +6,8 @@ var camera = {};
 gravity = 5; // Default value is 5
 intervalTimeout = 25; // Default value is 25
 var intervalId;
-var debug = true; // Change it to false to remove the grid
-
+var debug = false; // Change it to false to remove the grid
+var isPaused = false;
 
 // When all the HTML is loaded
 $(document).ready(function() {  
@@ -33,9 +33,17 @@ $(document).ready(function() {
       ball.x -= event.accelerationIncludingGravity.x*5;
     }, false);
   } else {
-    console.log("The browser is not supporting devicemotion")
+      console.log("The browser is not supporting devicemotion")
   }
 });
+
+//Pause button
+function pauseButton(event) {
+  ctx.font = '80px Gugi';
+  ctx.fillStyle = "white";
+  ctx.fillText("Pause", 700, 82);
+  isPaused = !isPaused;
+}
 
 $(document).keydown(function(e) {
   switch(e.which) {
@@ -47,6 +55,9 @@ $(document).keydown(function(e) {
       break;
     case 32: // space
       changeBgColor();
+      break;
+    case 80: // "P"
+      pauseButton();
       break;
   }
 });
@@ -93,19 +104,28 @@ function play() {
     height: height
   }
   intervalId = setInterval(function() {
-    update();
-    drawEverything();
+    if (!isPaused) {
+      update();
+      drawEverything();
+    }
   }, intervalTimeout);
 }
 
 function changeBgColor() {
-  if ($("canvas").css("background-color") == "rgb(255, 60, 60)") {
-    $("canvas").css("background-color", "rgb(100, 110, 255)");
-  }
-  else {
-    $("canvas").css("background-color", "rgb(255, 60, 60)");
-  }
+  var bgColors = ["red", "white", "green", "purpule"];
+  myColors = bgColors[Math.floor(Math.random() * bgColors.length)];
+  console.log(myColors);
+  $("canvas").css("background-color",  myColors);
 }
+
+// function changeBgColor() {
+//   if ($("canvas").css("background-color") == "rgb(255, 60, 60)") {
+//     $("canvas").css("background-color", "rgb(100, 110, 255)");
+//   }
+//   else {
+//     $("canvas").css("background-color", "rgb(255, 60, 60)");
+//   }
+// }
 
 function update() {
 
@@ -212,6 +232,7 @@ function drawGridCoordinates() {
 
 // Draw the top menu with the score
 function drawMenu(text) {
+
   ctx.save();  
 
   ctx.fillStyle = "black";
