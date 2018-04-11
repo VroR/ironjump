@@ -112,7 +112,7 @@ function play() {
 }
 
 function changeBgColor() {
-  var bgColors = ["red", "white", "green", "purpule"];
+  var bgColors = ["#0daad1", "#037EE8", "#033FDE", "#03DE91", "#054251", "#31416B"];
   myColors = bgColors[Math.floor(Math.random() * bgColors.length)];
   console.log(myColors);
   $("canvas").css("background-color",  myColors);

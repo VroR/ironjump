@@ -16,7 +16,7 @@ body {
 canvas {
   max-width: 90vw;
   max-height: 90vh;
-  background-color: #d10d69;
+  background-color: #0DAAD1;
   display: none;
   border-radius : 20px;
   box-shadow: 0px 0px 60px #42424279;
