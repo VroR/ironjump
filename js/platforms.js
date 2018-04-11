@@ -10,6 +10,11 @@ var platforms = [
     width: 200
   },
   {
+    x: 300,
+    y: 0,
+    width: 200
+  },
+  {
     x: 600,
     y: -100,
     width: 200
@@ -31,6 +36,12 @@ var platforms = [
     width: 200
   },
   {
+    x: 300,
+    y: -500,
+    width: 200,
+    color: "rgb(255, 60, 60)"
+  },
+  {
     x: 150,
     y: -750,
     width: 200,
@@ -42,9 +53,21 @@ var platforms = [
     width: 200
   },
   {
+    x: 300,
+    y: -1250,
+    width: 200,
+    color: "rgb(255, 60, 60)"
+  },
+  {
     x: 400,
     y: -1500,
     width: 200
+  },
+  {
+    x: 500,
+    y: -1750,
+    width: 200,
+    color: "rgb(255, 60, 60)"
   },
   {
     x: 400,
@@ -69,6 +92,21 @@ var platforms = [
   {
     x: 400,
     y: -4000,
+    width: 200
+  },
+  {
+    x: 400,
+    y: -4500,
+    width: 200
+  },
+  {
+    x: 400,
+    y: -5000,
+    width: 200
+  },
+  {
+    x: 400,
+    y: -5500,
     width: 200
   },
 ]
